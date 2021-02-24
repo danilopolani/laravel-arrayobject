@@ -21,6 +21,6 @@ Route::get('/', function () {
     $model = new Example($eloquentData);
 
     dump('JsonEncode ', json_encode($data, JSON_PRETTY_PRINT));
-    dump('Eloquent get_class(content)', get_class($model->content));
-    dd('Eloquent ::toJson()', $model->toJson(JSON_PRETTY_PRINT));
+    dump('Eloquent ::toJson()', $model->toJson(JSON_PRETTY_PRINT));
+    dd('Eloquent manual ArrayObject ::toJson()', (new Example($data))->toJson(JSON_PRETTY_PRINT));
 });
